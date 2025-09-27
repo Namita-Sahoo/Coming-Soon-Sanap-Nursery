@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sanap Plant Nursery — Coming Soon</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Inter:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons (replace with your icon pack if preferred) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    @font-face {
+      font-family: 'Maku';
+      src: url('Maku-Bold.ttf') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Gajraj One';
+      src: url('font/GajrajOne-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    :root{
+      --bg: #ffffff; /* white */
+      --text: #0b0b0b; /* near black */
+      --accent-green: #2e8b57; /* main green accent */
+      --accent-red: #c4473b;   /* main red accent */
+
+      /* 20% tint versions (approx) */
+      --tint-green: rgba(46,139,87,0.18);
+      --tint-red: rgba(196,71,59,0.18);
+
+      --muted: #6b6b6b;
+      --radius: 14px;
+      --max-width: 880px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: #fbfaf5; /* soft, light green for subtle background */
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px 20px;
+    }
+
+    .card{
+      width:100%;
+      max-width:var(--max-width);
+      text-align:center;
+      border-radius:18px;
+      padding:36px 40px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(250,250,250,0.95));
+      box-shadow:0 10px 30px rgba(10,10,10,0.06);
+    }
+
+    /* Logo area */
+    .logo-wrap{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      margin-bottom:8px;
+    }
+    .logo-placeholder{
+      width:78px; height:78px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--tint-green),var(--tint-red));
+      display:flex;align-items:center;justify-content:center;
+      font-weight:700;color:var(--text);font-family:'Merriweather',serif;font-size:18px;
+      box-shadow:0 6px 18px rgba(46,139,87,0.08), 0 6px 12px rgba(196,71,59,0.04);
+    }
+    .brand{
+      text-align:left;
+    }
+    .brand h1{
+      margin:0;
+      font-family: 'Playfair Display', 'Cinzel', 'Merriweather', serif;
+      font-weight: 700;
+      font-size: 54px; /* even larger for focus */
+      color:var(--accent-green);
+      letter-spacing:1px;
+      text-shadow: 0 2px 12px rgba(46,139,87,0.08);
+    }
+    .brand p {
+      margin: 0;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 22px; /* increased font size */
+      font-family: 'Gajraj One', serif;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    /* Coming soon header */
+    .coming-title{
+      font-family:'Merriweather',serif; font-size:34px; margin:18px 0 6px; color:var(--text);
+    }
+    .tagline{color:var(--muted); margin:0 0 22px; font-size:15px}
+
+    /* hero image area */
+    .hero{
+      width:100%; height:300px; border-radius:12px; overflow:hidden; position:relative;
+      background-color:var(--tint-green);
+      display:flex; align-items:center; justify-content:center;
+      box-shadow:0 6px 18px rgba(0,0,0,0.06);
+    }
+    .hero .overlay-card{
+      position:absolute; left:16px; bottom:16px; background:rgba(255,255,255,0.9); padding:10px 14px; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.06);
+      display:flex; gap:12px; align-items:center; font-size:13px; color:var(--muted);
+    }
+
+    /* decorative icon (plant + construction) */
+    .hero-graphic{
+      width:100%; height:100%; 
+      background-image: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02)), url('bgimage.png');
+      background-size:cover; 
+      background-position:center;
+      display:flex;align-items:center;justify-content:center;position:relative;
+      border: 1px solid #c4473b; /* 1px red border */
+      border-radius: 18px; /* curved corners */
+    }
+    .icon-large{
+      width:120px;height:120px;border-radius:80px;background:linear-gradient(135deg,var(--tint-green),var(--tint-red));display:flex;align-items:center;justify-content:center;font-size:48px;color:var(--accent-green);
+      box-shadow:0 8px 30px rgba(46,139,87,0.08);
+      transform:translateY(-8px);
+      animation:float 4s ease-in-out infinite;
+    }
+    @keyframes float{0%{transform:translateY(-6px)}50%{transform:translateY(6px)}100%{transform:translateY(-6px)}}
+
+    /* CTA row (icons) */
+    .social-row{display:flex;gap:14px;justify-content:center;margin-top:22px}
+    .social-row a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:transparent;border:1px solid rgba(0,0,0,0.06);text-decoration:none;color:var(--accent-green);font-size:18px}
+    .social-row a:hover{transform:translateY(-4px);box-shadow:0 8px 18px rgba(0,0,0,0.06)}
+
+    .footnote{margin-top:18px;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:640px){
+      .card{padding:22px}
+      .brand h1{font-size:26px}
+      .coming-title{font-size:22px}
+      .hero{height:220px}
+      .logo-placeholder{width:60px;height:60px;font-size:16px}
+    }
+  </style>
+</head>
+<body>
+  <main class="card" role="main" aria-labelledby="coming">
+
+    <!-- Logo + brand area. Replace the .logo-placeholder with an <img> tag when you have a logo -->
+    <div class="logo-wrap">
+      <img src="logo.png" alt="Sanap Plant Nursery Logo" style="width:78px;height:78px;border-radius:12px;object-fit:cover;">
+      <div class="brand">
+        <h1>SANAP PLANT NURSERY</h1>
+        <p>“ विश्वास शेतकऱ्यांच्या पिढ्यानपिढ्यांचा ”</p>
+      </div>
+    </div>
+
+    <h2 id="coming" class="coming-title">Coming Soon | लवकरच येत आहोत</h2>
+    <p class="tagline"><b><i>👉 Stay in touch with us – संपर्कात रहा !</i></b></p>
+
+    <div class="hero" role="img" aria-label="Nursery and website in progress illustration">
+      <div class="hero-graphic">
+        <!-- Removed icon-large and only kept overlay-card -->
+        <div class="overlay-card">
+          <i class="fa-solid fa-wrench"></i>
+          <div style="text-align:left">
+            <div style="font-weight:600;color:var(--text)">Site Work in Progress</div>
+            <div style="font-size:12px;color:var(--muted)"><b>Designing for plants & farmers</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="social-row" aria-label="social links">
+      <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+
+    <!-- <p class="footnote">No countdown — we prefer to polish things. Want to get in touch? Replace links above with your real social URLs.</p> -->
+
+  </main>
+</body>
+</html>
